@@ -1,0 +1,98 @@
+<html style = "overflow: hidden">
+<title>Beatsco</title>
+<!--<p>null</p>-->
+<audio id="song0">
+  <source src="khalid.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="song1">
+  <source src="drake.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="song2">
+  <source src="yachty.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+	<a id="upload" href="uploadPage.html" style="position: fixed; top: 18%; left: 55%; z-index: 10; border: 1px solid black; background-color: pink; padding: 2px; color: black; text-decoration: none;">Upload</a>
+	<br>
+	<center><H1> BEATSCO APP </H1></center>
+	
+	<div id = "phonezone" style = "position: absolute; top: 15%; left:40%; vertical-align: middle; overflow: hidden;">
+		<div id = "phonebox" style = "width: 279; height: 565; border-radius: 40px; border: 3px solid black; background-color: white; overflow: scroll;">
+			<style>
+				#phonebox::-webkit-scrollbar { 
+					width: 0 !important ;
+				}
+			</style>
+			<div id = "insidephone" style="padding-top: 30; padding-left: 7; padding-right: 7; padding-bottom: 30;">
+				<center>
+					<!-- here is where the shit goes down brotherman. -->
+
+					<div id="header" STYLE="border-bottom: 1px solid black; height: 70px">
+						<H1> My Feed </H1>
+					</div>
+				
+						<br><br><br><br>
+					<img id="album0" src="https://gmhslasso.org/wp-content/uploads/2017/03/cover-art.jpg" width="230px" height="230px">
+						<br>
+						<a href="">Like</a>
+						 |
+						<a href="">Repost</a>
+						<br><br><br><br>
+					<img id="album1" src="https://static.stereogum.com/uploads/2018/01/Scary-Hours-1516452280-640x640.jpg" width="230px" height="230px">
+						<br>
+						<a href="">Like</a>
+						 | 
+						<a href="">Repost</a>
+						<br><br><br><br>
+					<img ID="album2" src="https://static.stereogum.com/uploads/2016/04/DRAM-Broccoli-640x640.jpg" width="230px" height="230px">
+						<br>
+						<a href="">Like</a>
+						 | 
+						<a href="">Repost</a>
+						<br><br><br><br>
+						
+					<H5> COPYRIGHT 2019 </H5>
+						<br><br>
+					
+					
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+					<script>
+					var elements = document.getElementsByTagName('img');
+					var i;
+					var scrltimeout = null;
+					var volume = null;
+					var pos = null;
+					var middle = null;
+					var song = null;
+
+					$("#phonebox").scroll(function(){ 
+            			clearTimeout(scrltimeout);
+              			scrltimeout = setTimeout(function(){
+					
+						for (i = 0; i < elements.length; i++) { 
+    						song = document.getElementById("song"+i); 
+              					pos = $(elements[i]).position();
+              					middle = pos.top + (230/2); 
+	              					if(middle > 0 && middle < 565){song.play();}
+    	          						else {song.pause();}
+        	      					if(middle < 282){volume = (middle / 282)*100;}
+            	  					if(middle > 282){volume = ((565 - middle) / 282)*100;}
+              							if(volume > 100){volume = 100;}
+              							if(volume < 0){volume = 0;}
+              					song.volume = volume/100;
+									//$("p").html("volume: "+volume.toFixed()+"%");//reads to pic 3
+						}
+						}, 0)
+					});
+						
+						
+					</script>
+				</center>
+			</div>
+		</div><!--phone box div-->	
+	<div>
+	
+	<!--<div id="navbar" style="border-top: 1px solid black; border-radius: 40px; background-color: black; height: 50px; width: 275px; top: 84.3%; right: 38.8%; position: fixed;" -->
+</html>
